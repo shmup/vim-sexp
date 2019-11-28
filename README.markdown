@@ -10,7 +10,7 @@
                                                                     o888o
 </pre>
 
-[![This project is considered experimental](https://img.shields.io/badge/status-experimental-critical.svg)](https://benknoble.github.io/status/experimental/)
+[![This project is considered stable](https://img.shields.io/badge/status-stable-success.svg)](https://benknoble.github.io/status/stable/)
 
 ## Introduction
 
