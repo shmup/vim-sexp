@@ -8,9 +8,9 @@
 "      `8'    o888oo888o o888o o888o     8""888P' `Y8bod8P'o88'   888o 888bod8P'
 "                                                                      888
 "                                                                     o888o
-"  Author:   guns <self@sungpae.com>
+"  Author:   benknoble <ben.knoble@gmail.com>
 "  License:  MIT
-"  Homepage: https://github.com/guns/vim-sexp
+"  Homepage: https://github.com/benknoble/vim-sexp
 
 if exists('g:sexp_autoloaded')
     finish
