@@ -1,14 +1,14 @@
 *vim-sexp.txt*	Precision Editing for Symbolic Expressions
 
-            o8o
-            '"'
-oooo    ooooooo ooo. .oo.  .oo.        .oooo.o  .ooooo. oooo    ooooo.ooooo.
- `88.  .8' `888 `888P"Y88bP"Y88b      d88(  "8 d88' `88b `88b..8P'  888' `88b
-  `88..8'   888  888   888   888 8888 `"Y88b.  888ooo888   Y888'    888   888
-   `888'    888  888   888   888      o.  )88b 888    .o .o8"'88b   888   888
-    `8'    o888oo888o o888o o888o     8""888P' `Y8bod8P'o88'   888o 888bod8P'
-                                                                    888
-                                                                   o888o
+            o8o~
+            '"'~
+oooo    ooooooo ooo. .oo.  .oo.        .oooo.o  .ooooo. oooo    ooooo.ooooo.~
+ `88.  .8' `888 `888P"Y88bP"Y88b      d88(  "8 d88' `88b `88b..8P'  888' `88b~
+  `88..8'   888  888   888   888 8888 `"Y88b.  888ooo888   Y888'    888   888~
+   `888'    888  888   888   888      o.  )88b 888    .o .o8"'88b   888   888~
+    `8'    o888oo888o o888o o888o     8""888P' `Y8bod8P'o88'   888o 888bod8P'~
+                                                                    888~
+                                                                   o888o~
 
 ==============================================================================
 I. INTRODUCTION                                            *sexp-introduction*
@@ -518,11 +518,16 @@ INSERT MODE MAPPINGS (insert, optional)~
 III. OPTIONS                                                    *sexp-options*
 
                                                             *g:sexp_filetypes*
-A string representing an |autocmd-pattern| for the |FileType|s in which you
-wish to activate vim-sexp mappings.
+A list representing the valid |FileType|s in which you wish to activate
+vim-sexp mappings.
 >
         " Default
-        let g:sexp_filetypes = 'clojure,scheme,lisp,timl'
+        let g:sexp_filetypes = [
+                \ 'clojure',
+                \ 'scheme',
+                \ 'lisp',
+                \ 'timl',
+                \ ]
 <
                                           *g:sexp_enable_insert_mode_mappings*
 Toggle insert mode mappings in |g:sexp_filetypes|.
@@ -774,7 +779,17 @@ in the filetypes of your choosing.
         augroup END
 <
 ==============================================================================
-V. CHANGELOG                                                  *sexp-changelog*
+V. FILETYPES                                           *sexp-explicit-mappings*
+
+To setup sexp in an ftplugin, simply add >
+
+        call sexp#filetype#do_filetype('myfiletype')
+<
+in your ftplugin. Note that if `myfiletype` is not in |g:sexp_filetypes|, this
+will be a no-op.
+
+==============================================================================
+VI. CHANGELOG                                                  *sexp-changelog*
 
 03 March 2015
         - Add documentation on how to opt-out of g:sexp_mappings and manually
