@@ -1,10 +1,5 @@
 if !exists('g:sexp_filetypes')
-  let g:sexp_filetypes = [
-        \ 'clojure',
-        \ 'scheme',
-        \ 'lisp',
-        \ 'timl',
-        \ ]
+  let g:sexp_filetypes = 'clojure,scheme,lisp,timl'
 endif
 
 if !exists('g:sexp_enable_insert_mode_mappings')
@@ -77,7 +72,7 @@ let s:sexp_mappings = {
       \ }
 
 function sexp#filetype#do_filetype(filetype) abort
-  if index(g:sexp_filetypes, a:filetype) >= 0
+  if index(split(g:sexp_filetypes, ','), a:filetype) >= 0
     call s:sexp_create_mappings()
   endif
 endfunction

@@ -518,16 +518,11 @@ INSERT MODE MAPPINGS (insert, optional)~
 III. OPTIONS                                                    *sexp-options*
 
                                                             *g:sexp_filetypes*
-A list representing the valid |FileType|s in which you wish to activate
-vim-sexp mappings.
+A string representing an |autocmd-pattern| for the |FileType|s in which you
+wish to activate vim-sexp mappings.
 >
         " Default
-        let g:sexp_filetypes = [
-                \ 'clojure',
-                \ 'scheme',
-                \ 'lisp',
-                \ 'timl',
-                \ ]
+        let g:sexp_filetypes = 'clojure,scheme,lisp,timl'
 <
                                           *g:sexp_enable_insert_mode_mappings*
 Toggle insert mode mappings in |g:sexp_filetypes|.
