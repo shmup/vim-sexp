@@ -774,7 +774,7 @@ in the filetypes of your choosing.
         augroup END
 <
 ==============================================================================
-V. FILETYPES                                           *sexp-explicit-mappings*
+V. FILETYPES                                                    *sexp-filetype*
 
 To setup sexp in an ftplugin, simply add >
 
