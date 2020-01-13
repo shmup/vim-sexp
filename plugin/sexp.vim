@@ -1,4 +1,4 @@
-if exists('g:loaded_sexp')
+if exists('g:sexp_loaded')
   finish
 endif
-let g:loaded_sexp = 1
+let g:sexp_loaded = 1
