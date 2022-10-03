@@ -105,7 +105,7 @@ function s:create_plugs() abort
   "
   function! s:defplug(flags, mapmode, name, ...)
     let lhs = a:mapmode . '<buffer> <silent> <Plug>(' . a:name . ')'
-    call s:undo_ftplugin_add('execute "silent! '.a:mapmode[0].'unmap <buffer> Plug('.a:name.')"')
+    call s:undo_ftplugin_add('execute "silent! '.a:mapmode[0].'unmap <buffer> <Plug>('.a:name.')"')
     let rhs = join(a:000)
 
     let asexpr = a:flags[0] == '1'
@@ -337,7 +337,7 @@ function s:create_plugs() abort
         \ 'sexp_insert_double_quote',
         \ 'sexp_insert_backspace',
         \ ]
-    call s:undo_ftplugin_add('execute "silent! iunmap <buffer> Plug('.mapping.')"')
+    call s:undo_ftplugin_add('execute "silent! iunmap <buffer> <Plug>('.mapping.')"')
   endfor
 
   delcommand DefplugN
