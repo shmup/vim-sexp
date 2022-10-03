@@ -1,1 +1,1 @@
-call sexp#filetype#do_filetype('scheme')
+call sexp#filetype#do_filetype('racket')
