@@ -427,7 +427,7 @@ function! s:sexp_create_mappings() abort
     imap <silent><buffer> }    <Plug>(sexp_insert_closing_curly)
     imap <silent><buffer> "    <Plug>(sexp_insert_double_quote)
     imap <silent><buffer> <BS> <Plug>(sexp_insert_backspace)
-    for lhs in ['(', '[', '{', ')', ']', '}', '"', '<BS>' ]
+    for lhs in ['(', '[', '{', ')', ']', '}', '\"', '<BS>' ]
       call s:undo_ftplugin_add('execute "silent! iunmap <buffer> '.lhs.'"')
     endfor
   endif
